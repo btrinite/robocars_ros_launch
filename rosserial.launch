@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="rosserial_server" type="serial_node" name="rosserial_server">
+    <rosparam>
+      port: /dev/ttyUSB0
+      baud: 500000
+    </rosparam>
+  </node>
+</launch>
