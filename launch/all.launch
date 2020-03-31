@@ -2,7 +2,6 @@
 	<rosparam command="load" file="/home/btrinite/config" />
 	<include file="/home/pi/launch/rosserial.launch" /> 
 	<include file="/home/pi/launch/front-cam.launch" /> 
-	<include file="/home/pi/launch/imresize.launch" /> 
 	<include file="/home/pi/launch/ros_brain_fsm.launch" /> 
 	<include file="/home/pi/launch/ros_actuators_ctrl.launch" /> 
 	<include file="/home/pi/launch/web-video-server.launch" /> 
