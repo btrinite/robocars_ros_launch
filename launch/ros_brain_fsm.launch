@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="robocars_brain" type="robocars_brain_fsm" name="robocars_brain_fsm">
+  </node>
+</launch>

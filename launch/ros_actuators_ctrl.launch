@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="robocars_steering_ctrl" type="robocars_steering_ctrl" ns="steering_ctrl" name="robocars_steering_ctrl">
+  </node>
+  <node pkg="robocars_throttling_ctrl" type="robocars_throttling_ctrl" ns="throttling_ctrl" name="robocars_throttling_ctrl">
+  </node>
+</launch>

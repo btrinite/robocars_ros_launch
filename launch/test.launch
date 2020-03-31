@@ -1,0 +1,7 @@
+<launch>
+	<rosparam command="load" file="/home/btrinite/config.yaml" />
+	<include file="./front-cam.launch" /> 
+	<include file="./ros_brain_fsm.launch" /> 
+	<include file="./ros_actuators_ctrl.launch" /> 
+	<include file="./web-video-server.launch" /> 
+</launch>
