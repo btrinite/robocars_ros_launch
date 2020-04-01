@@ -4,5 +4,6 @@
 	<include file="./front-cam.launch" /> 
 	<include file="./ros_brain_fsm.launch" /> 
 	<include file="./ros_actuators_ctrl.launch" /> 
-	<include file="./web-video-server.launch" /> 
+	<include file="./web-video-server.launch" /> 	
+	<include file="./data_capture.launch" /> 
 </launch>
