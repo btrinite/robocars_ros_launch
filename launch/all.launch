@@ -1,5 +1,5 @@
 <launch>
-	<rosparam command="load" file="~/config.yaml" />
+	<rosparam command="load" file="$(optenv HOME)/config.yaml"/>
 	<include file="./rosserial.launch" /> 
 	<include file="./front-cam.launch" /> 
 	<include file="./ros_brain_fsm.launch" /> 
