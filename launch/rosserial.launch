@@ -5,4 +5,5 @@
       baud: 500000
     </rosparam>
   </node>
+  <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_message_info" />
 </launch>
