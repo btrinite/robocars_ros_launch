@@ -6,4 +6,5 @@
 	<include file="./ros_actuators_ctrl.launch" /> 
 	<include file="./web-video-server.launch" /> 	
 	<include file="./data_capture.launch" /> 
+	<include file="./autopilot.launch" /> 
 </launch>
