@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="robocars_autopilot" type="robocars_autopilot" name="robocars_autopilot">
+  </node>
+</launch>
