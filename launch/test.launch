@@ -6,4 +6,5 @@
 	<include file="./web-video-server.launch" /> 
 	<include file="./data_capture.launch" /> 
 	<include file="./autopilot.launch" /> 
+	<include file="./rosbridge_websocket.launch" />
 </launch>
