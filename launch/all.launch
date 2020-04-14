@@ -1,11 +1,14 @@
 <launch>
-	<rosparam command="load" file="$(optenv HOME)/config.yaml"/>
+	<arg name="robocars_path"  default="$(env ROBOCARS_PATH)"/>
+	<rosparam command="load" file="$(optenv ROBOCARS_PATH)/config.yaml"/>
 	<include file="./rosserial.launch" /> 
 	<include file="./front-cam.launch" /> 
 	<include file="./ros_brain_fsm.launch" /> 
 	<include file="./ros_actuators_ctrl.launch" /> 
 	<include file="./web-video-server.launch" /> 	
 	<include file="./data_capture.launch" /> 
-	<include file="./autopilot.launch" /> 
+	<include file="./autopilot.launch">
+		<arg name="robocars_path" value="$(arg robocars_path)" />
+	</include> 
 	<include file="./rosbridge_websocket.launch" />
 </launch>
