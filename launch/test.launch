@@ -1,7 +1,14 @@
 <launch>
 	<arg name="robocars_path"  default="$(env ROBOCARS_PATH)"/>
+	<arg name="robocars_companion_tty"  default="$(env ROBOCARS_COMPANION_TTY)"/>
+	<arg name="robocars_front_video"  default="$(env ROBOCARS_FRONT_VIDEO)"/>
 	<rosparam command="load" file="$(optenv ROBOCARS_PATH)/config.yaml"/>
-	<include file="./front-cam.launch" /> 
+	<include file="./rosserial.launch">
+		<arg name="robocars_companion_tty" value="$(arg robocars_companion_tty)" />
+	</include>  
+	<include file="./front-cam.launch" > 
+		<arg name="robocars_front_video" value="$(arg robocars_front_video)" />
+	</include>
 	<include file="./ros_brain_fsm.launch" /> 
 	<include file="./ros_actuators_ctrl.launch" /> 
 	<include file="./web-video-server.launch" /> 

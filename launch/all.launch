@@ -5,10 +5,10 @@
 	<rosparam command="load" file="$(optenv ROBOCARS_PATH)/config.yaml"/>
 	<include file="./rosserial.launch">
 		<arg name="robocars_companion_tty" value="$(arg robocars_companion_tty)" />
-        </include>  
+	</include>  
 	<include file="./front-cam.launch" > 
 		<arg name="robocars_front_video" value="$(arg robocars_front_video)" />
-        </include>
+	</include>
 	<include file="./ros_brain_fsm.launch" /> 
 	<include file="./ros_actuators_ctrl.launch" /> 
 	<include file="./web-video-server.launch" /> 	
