@@ -13,10 +13,8 @@
 	<include file="./ros_actuators_ctrl.launch" /> 
 	<include file="./web-video-server.launch" /> 	
 	<include file="./data_capture.launch" /> 
-<!--
 	<include file="./autopilot.launch">
 		<arg name="robocars_path" value="$(arg robocars_path)" />
 	</include> 
--->
 	<include file="./rosbridge_websocket.launch" />
 </launch>
