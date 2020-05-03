@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="robocars_switch_ctrl" type="robocars_switch_ctrl" ns="switch_ctrl" name="robocars_switch_ctrl">
+  </node>
+</launch>
