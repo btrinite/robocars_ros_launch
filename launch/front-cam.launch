@@ -22,10 +22,8 @@
   </node>
   <!--
   <node pkg="nodelet" type="nodelet" args="standalone image_proc/rectify" name="rectify_img">
-    <!-- remap input topics -->
     <remap from="image_mono" to="front_video/image_raw"/>
     <remap from="camera_info" to="front_video/camera_info"/>
-    <!-- remap output topics -->
     <remap from="rectify_img/image" to="front_video_rectify/image"/>
     <remap from="rectify_img/camera_info" to="front_video_rectify/camera_info"/>
   </node>
