@@ -1,0 +1,27 @@
+<launch>
+  <arg name="robocars_front_video" /> 
+  <!-- Set this to your camera's name -->
+  <arg name="cam_name" value="front_video" />
+
+  <!-- Start the GSCAM node -->
+  <env name="GSCAM_CONFIG" value="v4l2src $(arg robocars_front_video) ! video/x-raw,format=YUY2,framerate=20/1 ! videoconvert ! ffmpegcolorspace" />
+  <node pkg="gscam" type="gscam" name="$(arg cam_name)">
+    <param name="camera_name" value="$(arg cam_name)" />
+    <remap from="camera/image_raw" to="$(arg cam_name)/image_raw" />
+  </node>
+  <!-- Video resizing -->
+  <node pkg="nodelet" type="nodelet" args="standalone image_proc/resize" name="resize_img">
+    <!-- remap input topics -->
+    <remap from="image" to="front_video/image_raw"/>
+    <remap from="camera_info" to="front_video/camera_info"/>
+    <!-- remap output topics -->
+    <remap from="resize_img/image" to="front_video_resize/image"/>
+    <remap from="resize_img/camera_info" to="front_video_resize/camera_info"/>
+  </node>
+  <!-- Dynamic reconfigure the resizing nodelet -->
+  <node name="dynparam" pkg="dynamic_reconfigure" type="dynparam" args="set_from_parameters resize_img">
+    <param name="use_scale" type="int" value="0" />
+    <param name="width" type="int" value="160" />
+    <param name="height" type="int" value="120" />
+ </node>
+</launch>

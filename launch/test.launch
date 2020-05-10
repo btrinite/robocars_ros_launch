@@ -8,6 +8,7 @@
 	</include>  
 	<include file="./front-cam.launch" > 
 		<arg name="robocars_front_video" value="$(arg robocars_front_video)" />
+		<arg name="robocars_path" value="$(arg robocars_path)" />
 	</include>
 	<include file="./ros_brain_fsm.launch" /> 
 	<include file="./ros_actuators_ctrl.launch" /> 
