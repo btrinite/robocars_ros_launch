@@ -2,7 +2,7 @@
   <arg name="robocars_companion_tty" /> 
   <node pkg="rosserial_server" type="serial_node" name="rosserial_server">
     <param name="port" value="$(arg robocars_companion_tty)"/>
-    <param name="baud" value="500000"/>
+    <param name="baud" value="1500000"/>
   </node>
   <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_message_info" />
 </launch>
