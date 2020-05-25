@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="robocars_esp32cam_bridge" type="robocars_esp32cam_bridge" name="robocars_esp32cam_bridge">
+  </node>
+</launch>
