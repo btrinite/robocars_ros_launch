@@ -1,9 +1,0 @@
-<launch>
-  <node name="front_video" pkg="cv_camera" type="cv_camera_node" output="screen" >
-    <param name="device_path" value="/dev/video0" />
-    <param name="image_width" value="320" />
-    <param name="image_height" value="240" />
-    <param name="rate" value="30" />
-    <param name="frame_id" value="cv_usb_cam" />
-  </node>
-</launch>

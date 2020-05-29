@@ -1,5 +1,6 @@
 <launch>
+  <arg name="robocars_capture_path" />
   <node pkg="robocars_data_capture" type="robocars_data_capture" ns="data_capture" name="robocars_data_capture">
-    <param name="base_path" value="/d2-tmpfs/data"/>
+    <param name="base_path" value="$(arg robocars_capture_path)"/>
   </node>
 </launch>
