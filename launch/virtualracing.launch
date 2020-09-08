@@ -1,7 +1,7 @@
 <launch>
 	<arg name="robocars_path"  default="$(env ROBOCARS_PATH)"/>
 	<arg name="robocars_sbus_tty"  default="$(env ROBOCARS_SBUS_TTY)"/>
-	<arg name="robocars_capture_path"  default="$(ROBOCARS_CAPTURE_PATH)"/>
+	<arg name="robocars_capture_path"  default="$(env ROBOCARS_CAPTURE_PATH)"/>
 	<rosparam command="load" file="$(optenv ROBOCARS_PATH)/config.yaml"/>
 	<include file="./ros_host_sbus.launch" /> 
 	<include file="./ros_brain_fsm.launch" /> 
