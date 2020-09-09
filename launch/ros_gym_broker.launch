@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="robocars_gym_broker" type="gym_broker.py" name="gym_broker">
+     <remap from="/gym/image" to="front_video_resize/image"/>
+  </node>
+
+</launch>
