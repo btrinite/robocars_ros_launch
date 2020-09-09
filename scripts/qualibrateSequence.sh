@@ -11,6 +11,9 @@ rosparam get /steering_ctrl/command_input_max
 echo "Qualibration result for Throttling :"
 rosparam get /throttling_ctrl/command_input_min
 rosparam get /throttling_ctrl/command_input_max
+echo "Qualibration result for Braking :"
+rosparam get /braking_ctrl/command_input_min
+rosparam get /braking_ctrl/command_input_max
 
 
 
