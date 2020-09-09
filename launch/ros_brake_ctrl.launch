@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="robocars_braking_ctrl" type="robocars_braking_ctrl" ns="braking_ctrl" name="robocars_braking_ctrl">
+  </node>
+</launch>

@@ -8,6 +8,7 @@
         </include>
 	<include file="./ros_brain_fsm.launch" /> 
 	<include file="./ros_actuators_ctrl.launch" /> 
+	<include file="./ros_brake_ctrl.launch" /> 
 	<include file="./ros_switch_ctrl.launch" /> 
 	<include file="./ros_gym_broker.launch" /> 
 	<include file="./web-video-server.launch" /> 	
