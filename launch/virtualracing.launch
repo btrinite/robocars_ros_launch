@@ -2,7 +2,8 @@
 	<arg name="robocars_path"  default="$(env ROBOCARS_PATH)"/>
 	<arg name="robocars_sbus_tty"  default="$(env ROBOCARS_SBUS_TTY)"/>
 	<arg name="robocars_capture_path"  default="$(env ROBOCARS_CAPTURE_PATH)"/>
-	<rosparam command="load" file="$(optenv ROBOCARS_PATH)/config.yaml"/>
+	<arg name="robocars_config_file"  default="$(env ROBOCARS_CONFIG)"/>
+	<rosparam command="load" file="$(optenv ROBOCARS_PATH)/$(arg robocars_config_file)"/>
 	<include file="./ros_host_sbus.launch"> 
 		<arg name="robocars_sbus_tty" value="$(arg robocars_sbus_tty)" />
         </include>
