@@ -7,20 +7,50 @@
       <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_driving"/>
       <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_autopilot"/>
   </node>
+  <node pkg="robocars_steering_ctrl" type="robocars_steering_ctrl" ns="steering_ctrl" name="robocars_steering_ctrl">
+    <remap from="/radio_channels" to="/robots_radio_channels"/>
+    <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+    <remap from="/steering_ctrl/output" to="/steering_ctrl/robots_output"/>
+    <remap from="/autopilot/steering" to="/autopilot/robots_steering"/>
+  </node>
+  <node pkg="robocars_throttling_ctrl" type="robocars_throttling_ctrl" ns="throttling_ctrl" name="robocars_throttling_ctrl">
+    <remap from="/radio_channels" to="/robots_radio_channels"/>
+    <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+    <remap from="/throttling_ctrl/output" to="/throttling_ctrl/robots_output"/>
+    <remap from="/autopilot/throttling" to="/autopilot/robots_throttling"/>
+  </node>
+  <node pkg="robocars_braking_ctrl" type="robocars_braking_ctrl" ns="braking_ctrl" name="robocars_braking_ctrl">
+    <remap from="/radio_channels" to="/robots_radio_channels"/>
+    <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+    <remap from="/braking_ctrl/output" to="/braking_ctrl/robots_output"/>
+    <remap from="/autopilot/braking" to="/autopilot/robots_braking"/>
+  </node>
+  <node pkg="robocars_switch_ctrl" type="robocars_switch_ctrl" ns="switch_ctrl" name="robocars_switch_ctrl">
+    <remap from="/radio_channels" to="/robots_radio_channels"/>
+    <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+    <remap from="/switch_ctrl/output" to="/switch_ctrl/robots_output"/>
+  </node>
   <node pkg="robocars_autopilot" type="robocars_autopilot" name="robots_autopilot">
-      <param name="model_path" value="$(arg robocars_path)/robots_models"/>
-      <remap from="/front_video_resize/image" to="/front_video_resize/robots_image"/>
-      <remap from="/telemetry" to="/robots_telemetry"/>
-      <remap from="/remote_control/load_model" to="/remote_control/load_robots_model"/>
-      <remap from="/robocars_brain_state" to="/robots_brain_state"/>
-      <remap from="/autopilot/steering" to="/robotspilot/steering"/>
-      <remap from="/autopilot/throttling" to="/robotspilot/throttling"/>
-      <remap from="/autopilot/braking" to="/robotspilot/braking"/>
-      <remap from="/autopilot/stats" to="/robotspilot/stats"/>
-      <remap from="/autopilot/models_available" to="/robotspilot/models_available"/>
+    <param name="model_path" value="$(arg robocars_path)/robots_models"/>
+    <remap from="/front_video_resize/image" to="/front_video_resize/robots_image"/>
+    <remap from="/telemetry" to="/robots_telemetry"/>
+    <remap from="/remote_control/load_model" to="/remote_control/robots_load_model"/>
+    <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+    <remap from="/autopilot/steering" to="/autopilot/robots_steering"/>
+    <remap from="/autopilot/throttling" to="/autopilot/robots_throttling"/>
+    <remap from="/autopilot/braking" to="/autopilot/robots_braking"/>
+    <remap from="/autopilot/stats" to="/autopilot/robots_stats"/>
+    <remap from="/autopilot/models_available" to="/autopilot/robots_models_available"/>
   </node>
   <node pkg="robocars_gym_broker" type="gym_broker.py" name="robots_gym_broker">
-     <remap from="/gym/image" to="/front_video_resize/robots_image"/>
-     <remap from="/gym/telemetry" to="/robots_telemetry"/>
+    <remap from="/gym/image" to="/front_video_resize/robots_image"/>
+    <remap from="/gym/telemetry" to="/robots_telemetry"/>
+    <remap from="/throttling_ctrl/output" to="/throttling_ctrl/robots_output"/>
+    <remap from="/steering_ctrl/output" to="/steering_ctrl/robots_output"/>
+    <remap from="/braking_ctrl/output" to="/braking_ctrl/robots_output"/>
+    <remap from="/switch_ctrl/output" to="/switch_ctrl/robots_output"/>
+    <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+    <remap from="/remote_control/connect_sim" to="/remote_control/robots_connect_sim"/>
+    <remap from="/remote_control/reset_car" to="/remote_control/robots_reset_car"/>
   </node>
 </launch>
