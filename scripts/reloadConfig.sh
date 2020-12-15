@@ -1,2 +1,2 @@
 #!/bin/sh
-rosparam load $ROBOCARS_PATH/config.yaml
+rosparam load $ROBOCARS_PATH/$1

@@ -19,7 +19,7 @@ if [[ ! -v ROBOCARS_CAPTURE_PATH ]]; then
 	echo "env var ROBOCARS_CAPTURE_PATH is missing !"
 	exit -1
 fi
-export ROBOCARS_CONFIG=config.localdev-sim.yaml
+export ROBOCARS_CONFIG=config.race-sim.yaml
 
 echo "Main PATH : $ROBOCARS_PATH"
 echo "Companion on tty :  $ROBOCARS_COMPANION_TTY ($ROBOCARS_COMPANION_TTY_SPEED)"

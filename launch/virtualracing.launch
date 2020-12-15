@@ -23,4 +23,8 @@
 		<arg name="robocars_path" value="$(arg robocars_path)" />
 	</include> 
 	<include file="./rosbridge_websocket.launch" />
+	<include file="$(find cpu_monitor)/launch/cpu_monitor.launch">
+		<arg name="poll_period" value="1.0"/>
+	</include>
+
 </launch>
