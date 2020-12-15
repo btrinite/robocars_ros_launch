@@ -5,7 +5,7 @@
       <remap from="/robocars_debug" to="/robots_debug"/>
       <remap from="/radio_channels" to="/robots_radio_channels"/>
       <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_driving"/>
-      <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_autopilot"/>
+      <remap from="/remote_control/enable_autopilot" to="/remote_control/robots_enable_autopilot"/>
   </node>
   <node pkg="robocars_steering_ctrl" type="robocars_steering_ctrl" ns="steering_ctrl" name="robocars_robots_steering_ctrl">
     <remap from="/radio_channels" to="/robots_radio_channels"/>
