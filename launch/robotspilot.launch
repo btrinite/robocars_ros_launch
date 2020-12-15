@@ -28,7 +28,7 @@
   <node pkg="robocars_switch_ctrl" type="robocars_switch_ctrl" ns="switch_ctrl" name="robocars_robots_switch_ctrl">
     <remap from="/radio_channels" to="/robots_radio_channels"/>
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
-    <remap from="/switch_ctrl/output" to="/switch_ctrl/robots_output"/>
+    <remap from="/switch_ctrl/state" to="/switch_ctrl/robots_state"/>
   </node>
   <node pkg="robocars_autopilot" type="robocars_autopilot" name="robots_autopilot">
     <param name="model_path" value="$(arg robocars_path)/robots_models"/>
@@ -48,7 +48,7 @@
     <remap from="/throttling_ctrl/output" to="/throttling_ctrl/robots_output"/>
     <remap from="/steering_ctrl/output" to="/steering_ctrl/robots_output"/>
     <remap from="/braking_ctrl/output" to="/braking_ctrl/robots_output"/>
-    <remap from="/switch_ctrl/output" to="/switch_ctrl/robots_output"/>
+    <remap from="/switch_ctrl/state" to="/switch_ctrl/robots_state"/>
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
     <remap from="/remote_control/connect_sim" to="/remote_control/robots_connect_sim"/>
     <remap from="/remote_control/reset_car" to="/remote_control/robots_reset_car"/>
