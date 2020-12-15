@@ -52,5 +52,6 @@
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
     <remap from="/remote_control/connect_sim" to="/remote_control/robots_connect_sim"/>
     <remap from="/remote_control/reset_car" to="/remote_control/robots_reset_car"/>
+    <remap from="/remote_control/num_car" to="/remote_control/robots_num_car"/>
   </node>
 </launch>
