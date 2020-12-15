@@ -7,25 +7,25 @@
       <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_driving"/>
       <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_autopilot"/>
   </node>
-  <node pkg="robocars_steering_ctrl" type="robocars_steering_ctrl" ns="steering_ctrl" name="robocars_steering_ctrl">
+  <node pkg="robocars_steering_ctrl" type="robocars_steering_ctrl" ns="steering_ctrl" name="robocars_robots_steering_ctrl">
     <remap from="/radio_channels" to="/robots_radio_channels"/>
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
     <remap from="/steering_ctrl/output" to="/steering_ctrl/robots_output"/>
     <remap from="/autopilot/steering" to="/autopilot/robots_steering"/>
   </node>
-  <node pkg="robocars_throttling_ctrl" type="robocars_throttling_ctrl" ns="throttling_ctrl" name="robocars_throttling_ctrl">
+  <node pkg="robocars_throttling_ctrl" type="robocars_throttling_ctrl" ns="throttling_ctrl" name="robocars_robots_throttling_ctrl">
     <remap from="/radio_channels" to="/robots_radio_channels"/>
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
     <remap from="/throttling_ctrl/output" to="/throttling_ctrl/robots_output"/>
     <remap from="/autopilot/throttling" to="/autopilot/robots_throttling"/>
   </node>
-  <node pkg="robocars_braking_ctrl" type="robocars_braking_ctrl" ns="braking_ctrl" name="robocars_braking_ctrl">
+  <node pkg="robocars_braking_ctrl" type="robocars_braking_ctrl" ns="braking_ctrl" name="robocars_robots_braking_ctrl">
     <remap from="/radio_channels" to="/robots_radio_channels"/>
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
     <remap from="/braking_ctrl/output" to="/braking_ctrl/robots_output"/>
     <remap from="/autopilot/braking" to="/autopilot/robots_braking"/>
   </node>
-  <node pkg="robocars_switch_ctrl" type="robocars_switch_ctrl" ns="switch_ctrl" name="robocars_switch_ctrl">
+  <node pkg="robocars_switch_ctrl" type="robocars_switch_ctrl" ns="switch_ctrl" name="robocars_robots_switch_ctrl">
     <remap from="/radio_channels" to="/robots_radio_channels"/>
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
     <remap from="/switch_ctrl/output" to="/switch_ctrl/robots_output"/>
