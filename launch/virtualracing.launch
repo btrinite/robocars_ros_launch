@@ -19,5 +19,8 @@
 	<include file="./autopilot.launch">
 		<arg name="robocars_path" value="$(arg robocars_path)" />
 	</include> 
+	<include file="./robotspilot.launch">
+		<arg name="robocars_path" value="$(arg robocars_path)" />
+	</include> 
 	<include file="./rosbridge_websocket.launch" />
 </launch>

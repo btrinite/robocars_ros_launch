@@ -1,0 +1,26 @@
+<launch>
+  <arg name="robocars_path" /> 
+  <node pkg="robocars_brain" type="robocars_brain_fsm" name="robots_brain_fsm">
+      <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+      <remap from="/robocars_debug" to="/robots_debug"/>
+      <remap from="/radio_channels" to="/robots_radio_channels"/>
+      <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_driving"/>
+      <remap from="/remote_control/enable_driving" to="/remote_control/robots_enable_autopilot"/>
+  </node>
+  <node pkg="robocars_autopilot" type="robocars_autopilot" name="robots_autopilot">
+      <param name="model_path" value="$(arg robocars_path)/robots_models"/>
+      <remap from="/front_video_resize/image" to="/front_video_resize/robots_image"/>
+      <remap from="/telemetry" to="/robots_telemetry"/>
+      <remap from="/remote_control/load_model" to="/remote_control/load_robots_model"/>
+      <remap from="/robocars_brain_state" to="/robots_brain_state"/>
+      <remap from="/autopilot/steering" to="/robotspilot/steering"/>
+      <remap from="/autopilot/throttling" to="/robotspilot/throttling"/>
+      <remap from="/autopilot/braking" to="/robotspilot/braking"/>
+      <remap from="/autopilot/stats" to="/robotspilot/stats"/>
+      <remap from="/autopilot/models_available" to="/robotspilot/models_available"/>
+  </node>
+  <node pkg="robocars_gym_broker" type="gym_broker.py" name="robots_gym_broker">
+     <remap from="/gym/image" to="/front_video_resize/robots_image"/>
+     <remap from="/gym/telemetry" to="/robots_telemetry"/>
+  </node>
+</launch>
