@@ -41,7 +41,6 @@
     <remap from="/autopilot/braking" to="/autopilot/robots_braking"/>
     <remap from="/autopilot/stats" to="/autopilot/robots_stats"/>
     <remap from="/autopilot/models_available" to="/autopilot/robots_models_available"/>
-    <param name="enable_statistics" value="true"/>
 
   </node>
   <node pkg="robocars_gym_broker" type="gym_broker.py" name="robots_gym_broker">
@@ -55,6 +54,5 @@
     <remap from="/remote_control/connect_sim" to="/remote_control/robots_connect_sim"/>
     <remap from="/remote_control/reset_car" to="/remote_control/robots_reset_car"/>
     <remap from="/remote_control/num_car" to="/remote_control/robots_num_car"/>
-    <param name="enable_statistics" value="true"/>
   </node>
 </launch>
