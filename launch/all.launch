@@ -3,7 +3,7 @@
 	<arg name="robocars_companion_tty"  default="$(env ROBOCARS_COMPANION_TTY)"/>
 	<arg name="robocars_companion_tty_speed"  default="$(env ROBOCARS_COMPANION_TTY_SPEED)"/>
 	<arg name="robocars_front_video"  default="$(env ROBOCARS_FRONT_VIDEO)"/>
-	<arg name="robocars_capture_path"  default="$(ROBOCARS_CAPTURE_PATH)"/>
+	<arg name="robocars_capture_path"  default="$(env ROBOCARS_CAPTURE_PATH)"/>
 	<rosparam command="load" file="$(optenv ROBOCARS_PATH)/config.yaml"/>
 	<include file="./rosserial.launch">
 		<arg name="robocars_companion_tty" value="$(arg robocars_companion_tty)" />
