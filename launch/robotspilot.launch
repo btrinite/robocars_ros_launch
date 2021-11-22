@@ -16,7 +16,7 @@
   <node pkg="robocars_throttling_ctrl" type="robocars_throttling_ctrl" ns="throttling_ctrl" name="robocars_robots_throttling_ctrl">
     <remap from="/radio_channels" to="/robots_radio_channels"/>
     <remap from="/robocars_brain_state" to="/robots_brain_state"/>
-    <remap from="/throttling_ctrl/output" to="/throttling_ctrl/robots_output"/>
+    <remap from="/throttle_ctrl/output" to="/throttle_ctrl/robots_output"/>
     <remap from="/autopilot/throttling" to="/autopilot/robots_throttling"/>
   </node>
   <node pkg="robocars_braking_ctrl" type="robocars_braking_ctrl" ns="braking_ctrl" name="robocars_robots_braking_ctrl">
