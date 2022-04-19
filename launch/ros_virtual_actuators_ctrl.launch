@@ -1,8 +1,8 @@
 <launch>
   <node pkg="robocars_steering_ctrl" type="robocars_steering_ctrl" ns="steering_ctrl" name="robocars_steering_ctrl">
-     <remap from="/steering_ctrl/output" to="/virtual_steering_ctrl/output"/>
+     <remap from="/steering_ctrl/full" to="/virtual_steering_ctrl/full"/>
   </node>
   <node pkg="robocars_throttling_ctrl" type="robocars_throttling_ctrl" ns="throttle_ctrl" name="robocars_throttling_ctrl">
-    <remap from="/throttle_ctrl/output" to="/virtual_throttle_ctrl/output"/>
+    <remap from="/throttle_ctrl/full" to="/virtual_throttle_ctrl/full"/>
   </node>
 </launch>

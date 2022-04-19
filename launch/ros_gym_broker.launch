@@ -2,8 +2,8 @@
   <node pkg="robocars_gym_broker" type="gym_broker.py" name="gym_broker">
      <remap from="/gym/image" to="/front_video_resize/image"/>
      <remap from="/gym/telemetry" to="/telemetry"/>
-     <remap from="/throttling_ctrl/output" to="/virtual_throttling_ctrl/output"/>
-     <remap from="/steering_ctrl/output" to="/virtual_steering_ctrl/output"/>
-     <remap from="/braking_ctrl/output" to="/virtual_braking_ctrl/output"/>
+     <remap from="/throttling_ctrl/full" to="/virtual_throttling_ctrl/full"/>
+     <remap from="/steering_ctrl/full" to="/virtual_steering_ctrl/full"/>
+     <remap from="/braking_ctrl/full" to="/virtual_braking_ctrl/full"/>
   </node>
 </launch>
