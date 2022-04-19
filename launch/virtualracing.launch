@@ -12,16 +12,16 @@
 	<include file="./ros_brain_fsm.launch" /> 
 	<include file="./ros_virtual_actuators_ctrl.launch" />
 	<include file="./ros_brake_ctrl.launch" /> 
-	<!-- <include file="./ros_switch_ctrl.launch" /> -->
-	<!-- <include file="./ros_gym_broker.launch" /> -->
-	<!-- <include file="./web-video-server.launch" /> -->	
+	<include file="./ros_switch_ctrl.launch" />
+	<include file="./ros_gym_broker.launch" />
+	<include file="./web-video-server.launch" />
 	<!-- <include file="./data_capture.launch">
 		<arg name="robocars_capture_path" value="$(arg robocars_capture_path)" />
 	</include>  -->
 	<!-- <include file="./autopilot.launch">
 		<arg name="robocars_path" value="$(arg robocars_path)" />
 	</include> -->
-	<!-- <include file="./rosbridge_websocket.launch" /> -->
+	<include file="./rosbridge_websocket.launch" />
 	<!-- <include file="$(find cpu_monitor)/launch/cpu_monitor.launch">
 		<arg name="poll_period" value="1.0"/>
 	</include> -->
