@@ -5,17 +5,18 @@
     <param name="video_device" value="$(arg robocars_front_video)" />
     <param name="image_width" value="320" />
     <param name="image_height" value="240" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="1" />
+    <param name="pixel_format" value="mjpeg" />
+    <param name="camera_frame_id" type="str" value="0" />
     <param name="io_method" value="mmap"/>
     <param name="framerate" value="30"/>
+    <param name="stamp_offset_ms" value="180"/>
     <param name="camera_info_url" value="file://$(arg robocars_path)/front_camera.yaml"/>
   </node>
 
   <!-- Video cropping -->
   <node pkg="nodelet" type="nodelet" args="standalone image_proc/crop_decimate" name="crop_img">
     <param name="x_offset" type="int" value="0" />
-    <param name="y_offset" type="int" value="60" />
+    <param name="y_offset" type="int" value="80" />
     <param name="width" type="int" value="320" />
     <param name="height" type="int" value="120" />
     <!-- remap input topics -->
