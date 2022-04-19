@@ -3,6 +3,6 @@
      <remap from="/steering_ctrl/output" to="/virtual_steering_ctrl/output"/>
   </node>
   <node pkg="robocars_throttling_ctrl" type="robocars_throttling_ctrl" ns="throttle_ctrl" name="robocars_throttling_ctrl">
-    <remap from="/throttling_ctrl/output" to="/virtual_throttling_ctrl/output"/>
+    <remap from="/throttle_ctrl/output" to="/virtual_throttle_ctrl/output"/>
   </node>
 </launch>
