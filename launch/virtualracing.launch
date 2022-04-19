@@ -10,7 +10,8 @@
                 <arg name="robocars_companion_tty_speed" value="$(arg robocars_companion_tty_speed)" />
         </include>
 	<include file="./ros_brain_fsm.launch" /> 
-	<!-- <include file="./ros_actuators_ctrl.launch" /> -->
+	<include file="./ros_virtual_actuators_ctrl.launch" />
+	<include file="./ros_brake_ctrl.launch" /> 
 	<!-- <include file="./ros_switch_ctrl.launch" /> -->
 	<!-- <include file="./ros_gym_broker.launch" /> -->
 	<!-- <include file="./web-video-server.launch" /> -->	
