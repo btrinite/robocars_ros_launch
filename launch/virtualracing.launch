@@ -15,7 +15,7 @@
 	<include file="./ros_switch_ctrl.launch" />
 	<include file="./ros_gym_broker.launch" />
 	<include file="./web-video-server.launch" />
-	<include file="./data_capture.launch">
+	<include file="./virtual_data_capture.launch">
 		<arg name="robocars_capture_path" value="$(arg robocars_capture_path)" />
 	</include>
 	<!-- <include file="./autopilot.launch">

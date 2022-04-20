@@ -1,0 +1,8 @@
+<launch>
+  <arg name="robocars_capture_path" />
+  <node pkg="robocars_data_capture" type="robocars_data_capture" ns="data_capture" name="robocars_data_capture">
+    <param name="base_path" value="$(arg robocars_capture_path)"/>
+    <remap from="/steering_ctrl/full" to="/virtual_steering_ctrl/full"/>
+    <remap from="/throttle_ctrl/full" to="/virtual_throttle_ctrl/full"/>
+  </node>
+</launch>
