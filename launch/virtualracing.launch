@@ -18,9 +18,9 @@
 	<include file="./virtual_data_capture.launch">
 		<arg name="robocars_capture_path" value="$(arg robocars_capture_path)" />
 	</include>
-	<!-- <include file="./autopilot.launch">
+	<include file="./autopilot.launch">
 		<arg name="robocars_path" value="$(arg robocars_path)" />
-	</include> -->
+	</include>
 	<include file="./rosbridge_websocket.launch" />
 	<include file="$(find cpu_monitor)/launch/cpu_monitor.launch">
 		<arg name="poll_period" value="1.0"/>
