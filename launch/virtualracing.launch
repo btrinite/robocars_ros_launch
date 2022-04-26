@@ -10,7 +10,7 @@
                 <arg name="robocars_companion_tty_speed" value="$(arg robocars_companion_tty_speed)" />
         </include>
 	<include file="./ros_brain_fsm.launch" /> 
-	<include file="./ros_virtual_actuators_ctrl.launch" />
+	<include file="./virtual_ros_actuators_ctrl.launch" />
 	<include file="./ros_brake_ctrl.launch" /> 
 	<include file="./ros_switch_ctrl.launch" />
 	<include file="./ros_gym_broker.launch" />
@@ -21,7 +21,7 @@
 	<include file="./autopilot.launch">
 		<arg name="robocars_path" value="$(arg robocars_path)" />
 	</include>
-	<include file="./rosbridge_websocket.launch" />
+	<include file="./virtual_rosbridge_websocket.launch" />
 	<include file="$(find cpu_monitor)/launch/cpu_monitor.launch">
 		<arg name="poll_period" value="1.0"/>
 	</include>
