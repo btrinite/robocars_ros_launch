@@ -61,7 +61,10 @@
 
       <param name="bson_only_mode" value="$(arg bson_only_mode)"/>
       <remap from="/steering_ctrl/full" to="/virtual_steering_ctrl/full"/>
+      <remap from="/steering_ctrl/output" to="/virtual_steering_ctrl/output"/>
       <remap from="/throttle_ctrl/full" to="/virtual_throttle_ctrl/full"/>
+      <remap from="/throttle_ctrl/output" to="/virtual_throttle_ctrl/output"/>
+
    </node>
   </group>
 
