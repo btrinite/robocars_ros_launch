@@ -10,9 +10,9 @@
   <!-- Video cropping -->
   <node pkg="nodelet" type="nodelet" args="standalone image_proc/crop_decimate" name="crop_img">
     <param name="x_offset" type="int" value="0" />
-    <param name="y_offset" type="int" value="80" />
-    <param name="width" type="int" value="320" />
-    <param name="height" type="int" value="120" />
+    <param name="y_offset" type="int" value="20" />
+    <param name="width" type="int" value="160" />
+    <param name="height" type="int" value="100" />
     <!-- remap input topics -->
     <remap from="camera/image_raw" to="front_video/image_raw"/>
     <remap from="camera/image_info" to="front_video/camera_info"/>
