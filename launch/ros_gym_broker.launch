@@ -1,10 +1,47 @@
 <launch>
   <node pkg="robocars_gym_broker" type="gym_broker.py" name="gym_broker">
-     <remap from="/gym/image" to="/front_video_resize/image"/>
+     <remap from="/gym/image" to="/front_video/image_raw"/>
      <remap from="/gym/telemetry" to="/telemetry"/>
-     <remap from="/gym/camera_info" to="/front_video_resize/camera_info"/>
+     <remap from="/gym/camera_info" to="/front_video/camera_info"/>
      <remap from="/throttle_ctrl/full" to="/virtual_throttle_ctrl/full"/>
      <remap from="/steering_ctrl/full" to="/virtual_steering_ctrl/full"/>
      <remap from="/braking_ctrl/full" to="/virtual_braking_ctrl/full"/>
   </node>
+  <!-- Video cropping -->
+  <node pkg="nodelet" type="nodelet" args="standalone image_proc/crop_decimate" name="crop_img">
+    <param name="x_offset" type="int" value="0" />
+    <param name="y_offset" type="int" value="80" />
+    <param name="width" type="int" value="320" />
+    <param name="height" type="int" value="120" />
+    <!-- remap input topics -->
+    <remap from="camera/image_raw" to="front_video/image_raw"/>
+    <remap from="camera/image_info" to="front_video/camera_info"/>
+    <!-- remap output topics -->
+    <remap from="camera_out/image_raw" to="front_video_croped/image"/>
+    <remap from="camera_out/camera_info" to="front_video_croped/camera_info"/>
+  </node>
+
+  <!-- Video resizing -->
+  <node pkg="nodelet" type="nodelet" args="standalone image_proc/resize" name="resize_img">
+    <!-- remap input topics -->
+    <remap from="image" to="front_video_croped/image"/>
+    <remap from="camera_info" to="front_video_croped/camera_info"/>
+    <!-- remap output topics -->
+    <remap from="resize_img/image" to="front_video_resize/image"/>
+    <remap from="resize_img/camera_info" to="front_video_resize/camera_info"/>
+  </node>
+  <!--
+  <node pkg="nodelet" type="nodelet" args="standalone image_proc/rectify" name="rectify_img">
+    <remap from="image_mono" to="front_video/image_raw"/>
+    <remap from="camera_info" to="front_video/camera_info"/>
+    <remap from="rectify_img/image" to="front_video_rectify/image"/>
+    <remap from="rectify_img/camera_info" to="front_video_rectify/camera_info"/>
+  </node>
+  -->
+  <!-- Dynamic reconfigure the resizing nodelet -->
+  <node name="dynparam" pkg="dynamic_reconfigure" type="dynparam" args="set_from_parameters resize_img">
+    <param name="use_scale" type="int" value="0" />
+    <param name="width" type="int" value="160" />
+    <param name="height" type="int" value="120" />
+ </node>
 </launch>
